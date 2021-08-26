@@ -1,2 +1,7 @@
-#!/bin/bash
-printf("with proper grammar, but the outcome is a piece of art,\n");
+#include<stdio.h>
+int main()
+
+{
+    printf("with proper grammar, but the outcome is a piece of art,\n")
+    retunr 0;
+}
