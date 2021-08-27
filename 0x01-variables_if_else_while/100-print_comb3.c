@@ -6,11 +6,10 @@
  */
 int main(void)
 {
-int i = 00;
-while (i <= 100)
+int i;
+for (i <= '100'; i >= '00'; i++)
 {
 putchar(i);
-i++;
 putchar(',');
 putchar(' ');
 }
