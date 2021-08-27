@@ -7,7 +7,7 @@
 int main(void)
 {
 char i;
-for (i = '0'; i <= 15; i++)
+for (i = 0; i <= 15; i++)
 {
 putchar((i % 16) + '0');
 }
