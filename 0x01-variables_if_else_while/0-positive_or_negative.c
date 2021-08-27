@@ -14,12 +14,8 @@ if
 (n > 0)
 {
 printf("%d is positive\n", n);
-(n < 0)
-{
-printf("%d is negative\n", n);
-}
 else if
-(n < 0);
+(n < 0)
 {
 printf("%d is negative\n", n);
 }
