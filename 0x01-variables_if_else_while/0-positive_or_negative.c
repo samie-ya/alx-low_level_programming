@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 /**
  * main- will be executing if else function and return zero.
  * Return: 0
@@ -6,16 +8,20 @@
 int main(void)
 {
 int n;
-scanf("%d\n", &n);
+srand(time(0));
+n = rand() - RAND_MAX / 2;
 if
+(n > 0);
+{
+printf("%d is positive\n", n);
 (n < 0);
 {
 printf("%d is negative\n", n);
 }
 else if
-(n > 0);
+(n < 0);
 {
-printf("%d is positive\n", n);
+printf("%d is negative\n", n);
 }
 else
 {
