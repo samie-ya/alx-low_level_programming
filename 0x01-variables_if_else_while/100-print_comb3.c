@@ -8,7 +8,6 @@ int main(void)
 {
 int i = 00;
 while (i <= 100)
-if (i != i)
 {
 putchar(i);
 i++;
