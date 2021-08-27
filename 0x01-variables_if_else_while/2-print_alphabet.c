@@ -10,6 +10,7 @@ char a;
 for (a = 'a'; a <= 'z'; a++)
 {
 putchar(a);
+putchar(0);
 }
 return (0);
 }
