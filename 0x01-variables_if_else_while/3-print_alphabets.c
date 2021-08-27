@@ -11,6 +11,6 @@ for (A = 'a'; A <= 'z'; A++)
 putchar(A);
 for (A = 'A'; A <= 'Z'; A++)
 putchar(A);
-putchar(0)
+putchar('\n');
 return (0);
 }
