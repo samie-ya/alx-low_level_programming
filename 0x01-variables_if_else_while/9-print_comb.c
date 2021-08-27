@@ -12,9 +12,9 @@ for (i = 0; i <= 9; i++)
 putchar((i % 10) + '0');
 if (i == 9)
 continue;
-putchar(44);
-putchar(32);
+putchar(',');
+putchar(' ');
 }
-putchar(0);
+putchar('\n');
 return (0);
 }
