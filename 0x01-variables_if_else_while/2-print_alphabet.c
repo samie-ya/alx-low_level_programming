@@ -6,11 +6,11 @@
  */
 int main(void)
 {
-char A=a;
-while(A <= z);
+char a;
+for
+(a = 'a'; a <= 'z'; a++ );
 {
 putchar(a);
-a++;
 }
 return (0);
 }
