@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
  * main - will be printing a statement and returning one value.
+ *
  * Return: Always 1.
  */
 int main(void)
