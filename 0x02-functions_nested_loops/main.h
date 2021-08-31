@@ -10,5 +10,7 @@ int print_sign(int n);
 int _abs(int r);
 void times_table(void);
 int print_last_digit(int n);
+void jack_bauer(void);
+int add(int a, int b);
 
 #endif
