@@ -7,10 +7,9 @@
 int main(void)
 {
 int i;
-while (i <= 89)
+for (i = '0'; i++;)
 {
-putchar(i);
-i++;
+putchar(i%100 + '0');
 putchar(',');
 putchar(' ');
 }
