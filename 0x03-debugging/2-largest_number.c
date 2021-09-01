@@ -22,4 +22,5 @@ else
 largest = c;
 }
 return (largest);
+printf("\n");
 }
