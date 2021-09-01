@@ -1,13 +1,28 @@
 #include "main.h"
+#include <stdio.h>
 /**
+* print_to_98- prints all digit till 98
 *
+* @n: is the integer
 *
-*
-*
-*
+* Return: void
 */
 void print_to_98(int n)
 {
- (n <0 )
-return;
+if (n >= 98)
+{
+while (n >= 98)
+{
+printf("%d, ", n--);
+}
+printf("\n");
+}
+else
+{
+while (n <= 98)
+{
+printf("%d, ", n++);
+}
+}
+printf("\n");
 }
