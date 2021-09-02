@@ -1,10 +1,8 @@
 #include "main.h"
 /**
+* print_triangle- making triange
 *
-*
-*
-*
-*
+* Return: Nothing
 */
 void print_triangle(int size)
 {
