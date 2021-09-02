@@ -4,10 +4,6 @@
 *
 * @n: parameter used
 *
-* @i: parameter used
-*
-* @j: parameter used
-*
 * Return: nothing
 */
 void print_diagonal(int n)
@@ -31,6 +27,4 @@ _putchar('\n');
 i++;
 }
 }
-_putchar('\n');
-return;
 }
