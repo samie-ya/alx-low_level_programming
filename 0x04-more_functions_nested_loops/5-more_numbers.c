@@ -2,24 +2,26 @@
 /**
 * more_numbers- repeates 10 times
 *
-* @a: parameter used
-*
-* @b: parameter used
-*
 * Return: nothing
 */
 void more_numbers(void)
 {
-int a = 0;
-while (a < 10)
+int a;
+int b;
+for (a = 0; a < 10; a++)
 {
-int b = 0;
-while (b < 10)
+for (b = 0; b <= 14; b++)
+{
+if (b > 9)
+{
+_putchar((b / 10) + '0');
+_putchar((b % 10) + '0');
+}
+else
 {
 _putchar((b % 10) + '0');
-b++;
+}
 }
 _putchar('\n');
-a++;
 }
 }
