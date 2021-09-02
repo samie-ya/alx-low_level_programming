@@ -2,8 +2,6 @@
 /**
 * main- print 1-100
 *
-* @i: parameter used
-*
 * Return: value 0
 */
 int main(void)

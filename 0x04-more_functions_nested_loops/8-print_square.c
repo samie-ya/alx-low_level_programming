@@ -2,10 +2,6 @@
 /**
 * print_square- prints a square
 *
-* @i: parameter used
-*
-* @j: parameter used
-*
 * @size: parameter used
 *
 * Return: nothing
@@ -30,6 +26,4 @@ _putchar('\n');
 i++;
 }
 }
-_putchar('\n');
-return;
 }
