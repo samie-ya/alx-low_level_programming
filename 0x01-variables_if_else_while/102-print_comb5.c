@@ -16,14 +16,14 @@ for (j = 0; j <= 8; j++)
 {
 for (l = 0; l <= 9; l++)
 {
-for (m = 1; m <= 9; m++)
+for (m = j + 1; m <= 9; m++)
 {
 putchar((i % 10) + '0');
 putchar((j % 10) + '0');
 putchar(' ');
 putchar((l % 10) + '0');
 putchar((m % 10) + '0');
-if (i == 9 && j == 8 && l == 9 && m == 9)
+if ((i == 9 && j == 8) && (l == 9 && m == 9))
 {
 continue;
 }
