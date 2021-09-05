@@ -21,6 +21,9 @@ if (j % 10 == 9)
 {
 continue;
 }
+_putchar(',');
+_putchar(' ');
+_putchar(' ');
 }
 else
 {
@@ -30,9 +33,9 @@ if (k / i == 9)
 {
 continue;
 }
-}
 _putchar(',');
 _putchar(' ');
+}
 }
 _putchar('\n');
 }
