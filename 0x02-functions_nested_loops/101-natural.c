@@ -1,25 +1,31 @@
 #include <stdio.h>
 /**
+* main- add multiple of 3 and 5 less than 1024
 *
-*
-*
+* Return: value 0
 */
 int main(void)
 {
-int i = 1;
-while (i < 10)
+int i;
+int j = 0;
+int k = 0;
+int l = 0;
+for (i = 0; i < 1024; i++)
 {
-int n = (i % 3 == 0);
-int j = (i % 5 == 0); 
+if (i % 3 == 0)
 {
-if (n || j)
+j = j + i;
+}
+if (i % 5 == 0)
 {
-int k = n + j;
-printf("%d, ", k);
+k = k + i;
+}
+if (i % 15 == 0)
+{
+l = l + i;
 }
 }
-i++;
-}
+printf("%d", ((k + j) -l));
 printf("\n");
 return (0);
 }
