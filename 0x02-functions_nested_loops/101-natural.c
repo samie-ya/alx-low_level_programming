@@ -6,11 +6,20 @@
 */
 int main(void)
 {
-int i;
-for (i = 0; i <= 10; i++)
+int i = 1;
+while (i < 10)
 {
-if (i % 3 == 0) 
-printf("%d, ", i);
+int n = (i % 3 == 0);
+int j = (i % 5 == 0); 
+{
+if (n || j)
+{
+int k = n + j;
+printf("%d, ", k);
 }
+}
+i++;
+}
+printf("\n");
 return (0);
 }
