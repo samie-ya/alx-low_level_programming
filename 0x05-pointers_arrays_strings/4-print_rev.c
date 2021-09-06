@@ -9,15 +9,24 @@
 *
 */
 void print_rev(char *s)
-int j = *s;
 {
-int i = 0;
-for (; *s != '\0'; s++)
+int c;
+char *begin, *end, temp;
+int d = 0;
+for (; *s != 0; s++)
 {
-int l;
-int k = 0;
-int rev = i - 1;
-for (l = k; l < rev; l++)
-i++;
+begin = s;
+end = s;
+for (c = 0; c < d -1; c++)
+end++;
+for (c = 0; c < d / 2; c++)
+{
+temp = *end;
+*end = *begin;
+*begin = temp;
+begin++;
+end--;
+}
+d++;
 }
 }
