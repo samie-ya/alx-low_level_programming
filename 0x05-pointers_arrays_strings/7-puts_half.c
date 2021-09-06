@@ -27,8 +27,8 @@ _putchar(str[j]);
 else
 {
 n = ((i - 1) / 2);
+n = n + 1;
 for (j = n; j < i; j++)
-j = j + 1;
 {
 _putchar(str[j]);
 }
