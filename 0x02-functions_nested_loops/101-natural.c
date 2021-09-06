@@ -25,7 +25,7 @@ if (i % 15 == 0)
 l = l + i;
 }
 }
-printf("%d", ((k + j) -l));
+printf("%d" ,((k + j) -l));
 printf("\n");
 return (0);
 }
