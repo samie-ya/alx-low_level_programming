@@ -34,6 +34,10 @@ s[i] = s[i] - 32;
 continue;
 }
 }
+if (s[i] == '\t')
+{
+s[i] = ' ';
+}
 }
 return (s);
 }
