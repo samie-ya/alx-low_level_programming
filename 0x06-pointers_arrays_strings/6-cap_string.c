@@ -8,24 +8,24 @@
 */
 char *cap_string(char *s)
 {
-int i;
+int i = 0;
 int j;
 int n = 13;
 char a[] = {32, '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
-for (i = 0; s[i] != '\0'; i++)
+while (s[i])
 {
 if (s[i] == '\t')
 {
 s[i] = ' ';
 }
-for (j = 0; j < n; j++)
+j = 0;
+while (j < n)
 {
 if ((i == 0 || s[i - 1] == a[j]) && (s[i] >= 'a' && s[i] <= 'z'))
-{
 s[i] = s[i] - 32;
 j++;
 }
-}
+i++;
 }
 return (s);
 }
