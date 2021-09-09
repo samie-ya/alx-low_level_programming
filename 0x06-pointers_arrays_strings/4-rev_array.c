@@ -11,13 +11,16 @@
 */
 void reverse_array(int *a, int n)
 {
-int *p, i, aux, k;
-p = a;
-for (i = 1; i < n; i++)
+int i = 0;
+int j;
+int k;
+while (a[i] != '\0')
 {
-p++;
+i++;
 }
-for (k = 0; k < i / 2; k++)
+j = 0;
+k = i < n;
+for (j = 0; j ; k++)
 {
 aux = a[k];
 a[k] = *p;

@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stddef.h>
 /**
 * _strncpy- to copy till n
 *
@@ -13,18 +12,16 @@
 */
 char *_strncpy(char *dest, char *src, int n)
 {
+int i;
 char *temp;
-if ((dest == NULL) && (src == NULL))
-{
-return NULL;
-}
 temp = dest;
-while (*src && n--)
+for (i = 0; i < n; i++)
 {
-*dest = *src;
-dest++;
-src++;
+*dest++ = *src++;
 }
-*dest = '\0';
+if (n--)
+{
+*dest++ = '\0';
+}
 return (temp);
 }
