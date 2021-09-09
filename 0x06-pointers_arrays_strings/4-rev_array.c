@@ -1,18 +1,31 @@
 #include "main.h"
 /**
- *reverse_array - For printing an integer array in reverse order
- *@a: pointer to the string
- *@n: number of elements in the array
- *
- *no return since its void
- */
+* reverse_array- For printing an integer array in reverse order
+*
+* @a: parameter used
+*
+* @n: parameter used
+*
+* Return: value nothing
+*/
 void reverse_array(int *a, int n)
 {
-        int i;
-        for (i = 0; i < (n / 2); i++)
-        {
-            int swap = a[n - 1 - i];
-            a[n - 1 - i] = a[i];
-            a[i] = swap;
-        }
+int i = 0;
+int j;
+int k;
+int l;
+char temp;
+while (a[i] != '\0')
+{
+i++;
+}
+j = 0;
+k = n - 1;
+for (l = j; l < k; l++)
+{
+temp = a[l];
+a[l] = a[k];
+a[k] = temp;
+k--;
+}
 }
