@@ -10,22 +10,18 @@
 */
 void reverse_array(int *a, int n)
 {
-int i = 0;
+int i;
+int temp;
 int j;
-int k;
-int l;
-char temp;
-while (a[i] != '\0')
+for (i = 0; i < n; i++)
 {
-i++;
+a++;
 }
-j = 0;
-k = n - 1;
-for (l = j; l < k; l++)
+for (i = 0; i < n / 2; i++)
 {
-temp = a[l];
-a[l] = a[k];
-a[k] = temp;
-k--;
+temp = *(a + i);
+*(a + i) = *(a + n -1 - i);
+*(a + n - 1 - i) = temp;
+a++;
 }
 }
