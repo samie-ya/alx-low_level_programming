@@ -11,19 +11,18 @@
 */
 char *_strstr(char *haystack, char *needle)
 {
-int  i = 0;
-while (needle[i] != '\0')
-{
 while (*haystack)
 {
-if (*haystack == *needle)
+char *i = haystack;
+char *j = needle;
+while (*haystack && j && *haystack == *j)
 {
-if (!(haystack[i] == needle[i]))
-return (haystack);
-}
 haystack++;
+j++;
 }
-i++;
+if (!*j)
+return (i);
+haystack = i + 1;
 }
 return ('\0');
 }
