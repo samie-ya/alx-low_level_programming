@@ -12,17 +12,21 @@
 */
 int main(int argc, char *argv[])
 {
-int i;
-int sum;
-if (argc > 1)
+int i = 1;
+int sum = 0;
+while (i < argc)
 {
-for (i = 1; i < argc; i++)
-sum += atoi(argv[i]);
-printf("%d\n", sum);
+if (*argv[i] < 48 || *argv[i] > 57)
+{
+printf("Error\n");
+return (1);
 }
 else
 {
-printf("0\n");
+sum += atoi(argv[i]);
 }
+i++;
+}
+printf("%d\n", sum);
 return (0);
 }
