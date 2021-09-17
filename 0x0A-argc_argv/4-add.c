@@ -14,19 +14,22 @@ int main(int argc, char *argv[])
 {
 int i = 1;
 int sum = 0;
-while (i < argc)
+if (argc > 1)
+{
+for (i = 1; i < argc; i++)
 {
 if (*argv[i] < 48 || *argv[i] > 57)
 {
 printf("Error\n");
 return (1);
 }
-else
-{
 sum += atoi(argv[i]);
 }
-i++;
-}
 printf("%d\n", sum);
+}
+else
+{
+printf("0\n");
+}
 return (0);
 }
