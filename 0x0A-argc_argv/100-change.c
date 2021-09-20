@@ -11,28 +11,35 @@
 */
 int main(int argc, char *argv[])
 {
-int i = 1;
-int m = 0;
+int a = atoi(argv[1]);
 int div;
-int n[] = {25, 10, 5, 2, 1};
-if (*argv[i] > 0)
+if (argc == 2)
 {
-while (m < 5)
+if (a >= 25 && a % 25 == 0)
 {
-if (*argv[i] >= n[m])
+div = a / 25;
+}
+if (a >= 10 && a % 10 == 0)
 {
-div = *argv[i] / n[m];
-if (div == 0)
+div = a / 10;
+}
+if (a >= 5 && a % 5 == 0)
 {
-printf ("%d\n", div);
+div = a / 5;
 }
+if (a >= 2 && a % 2 == 0)
+{
+div = a / 2;
 }
-m++;
+if (a >= 1 && a % 1 == 0)
+{
+div = a / 1;
 }
-}
-if (*argv[i] < 0)
+if (a < 0)
 {
 printf("0\n");
+}
+printf("%d\n", div);
 }
 else
 {
