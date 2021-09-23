@@ -33,10 +33,8 @@ else
 len = i + n + 1;
 dest = malloc(sizeof(char) * len);
 if (dest == 0)
-{
 return (0);
 free(dest);
-}
 if (k < len)
 {
 while (*s1 != '\0')
@@ -45,9 +43,11 @@ dest[k] = *s1;
 s1++;
 k++;
 }
-for (j = 0; s2[j] && j < n; j++)
+j = 0;
+while (s2[j] != '\0' && j < n)
 {
 dest[k] = s2[j];
+j++;
 k++;
 }
 }
