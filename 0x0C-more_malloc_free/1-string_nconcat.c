@@ -31,11 +31,10 @@ if (n >= j)
 len = i + j + 1;
 else
 len = i + n + 1;
-dest = malloc(len);
+dest = malloc(sizeof(int) * len);
 if (dest == 0)
 {
 return (0);
-free(dest);
 }
 if (k < len)
 {
