@@ -28,10 +28,10 @@ i++;
 while (s2[j] != '\0')
 j++;
 if (n >= j)
-len = i + j;
+len = i + j + 1;
 else
-len = i + n;
-dest = malloc((sizeof(char) * len) + 1);
+len = i + n + 1;
+dest = malloc(sizeof(char) * len);
 if (dest == 0)
 {
 return (0);
@@ -44,7 +44,7 @@ for (i =  0; s1[i] != '\0'; i++)
 dest[k] = s1[i];
 k++;
 }
-for (j = 0; s2[j] != '\0' && j < n; j++)
+for (j = 0; s2[j] != '\0' && j <= n; j++)
 {
 dest[k] = s2[j];
 k++;
