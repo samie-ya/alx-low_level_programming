@@ -31,7 +31,7 @@ if (n >= j)
 len = i + j + 1;
 else
 len = i + n + 1;
-dest = malloc(sizeof(int) * len);
+dest = malloc(sizeof(char) * len);
 if (dest == 0)
 {
 return (0);
