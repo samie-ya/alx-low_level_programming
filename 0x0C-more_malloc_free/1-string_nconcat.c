@@ -39,9 +39,10 @@ free(dest);
 }
 if (k < len)
 {
-for (i =  0; s1[i]; i++)
+while (*s1 != '\0')
 {
-dest[k] = s1[i];
+dest[k] = *s1;
+s1++;
 k++;
 }
 for (j = 0; s2[j] && j < n; j++)
