@@ -28,13 +28,14 @@ i++;
 while (s2[j] != '\0')
 j++;
 if (n >= j)
-len = i + j + 1;
+len = i + j;
 else
-len = i + n + 1;
-dest = malloc(sizeof(char) * len);
+len = i + n;
+dest = malloc((sizeof(char) * len) + 1);
 if (dest == 0)
 {
 return (0);
+free(dest);
 }
 if (k < len)
 {
