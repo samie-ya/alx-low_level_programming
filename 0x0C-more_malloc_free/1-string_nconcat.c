@@ -33,14 +33,15 @@ else
 len = i + n + 1;
 dest = malloc(len);
 if (dest == 0)
+{
 return (0);
 free(dest);
+}
 if (k < len)
 {
-while (*s1 != '\0')
+for (i =  0; s1[i] != '\0'; i++)
 {
-dest[k] = *s1;
-s1++;
+dest[k] = s1[i];
 k++;
 }
 for (j = 0; s2[j] != '\0' && j < n; j++)
