@@ -43,7 +43,7 @@ dest[k] = *s1;
 s1++;
 k++;
 }
-for (j = 0; s2[j] != '\0' && j < n; j++)
+for (j = 0; s2[j] && j < n; j++)
 {
 dest[k] = s2[j];
 k++;
