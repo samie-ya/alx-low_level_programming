@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
-* main- prints 4 digits
+* main- prints 4 digits where the first 2 are less than the last 2
 *
 * Return: value 0
 */
@@ -10,20 +10,24 @@ int i;
 int j;
 int l;
 int m;
-for (i = 0; i <= 9; i++)
+int n;
+int o;
+for (i = 0; i < 100; i++)
 {
-for (j = 0; j <= 8; j++)
+for (j = 0; j < 100; j++)
 {
-for (l = 0; l <= 9; l++)
+l = i / 10;
+m = i % 10;
+n = j / 10;
+o = j % 10;
+if (i < j)
 {
-for (m = i + 1; m <= 9; m++)
-{
-putchar((i % 10) + '0');
-putchar((j % 10) + '0');
+putchar((l) +'0');
+putchar((m) +'0');
 putchar(' ');
-putchar((l % 10) + '0');
-putchar((m % 10) + '0');
-if ((i == 9 && j == 8) && (l == 9 && m == 9))
+putchar((n) +'0');
+putchar((o) +'0');
+if (l == 9 && m == 8 && n == 9 && o == 9)
 {
 continue;
 }
@@ -33,6 +37,5 @@ putchar(' ');
 }
 }
 putchar('\n');
-}
 return (0);
 }
