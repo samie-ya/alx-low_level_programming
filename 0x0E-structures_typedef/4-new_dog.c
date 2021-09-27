@@ -21,8 +21,8 @@ if (user == 0)
 return (0);
 free(user);
 }
-user->name = name;
+name = name;
 user->age = age;
-user->owner = owner;
+owner = owner;
 return (user);
 }
