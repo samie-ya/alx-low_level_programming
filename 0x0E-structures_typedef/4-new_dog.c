@@ -36,7 +36,7 @@ if (user->owner == 0)
 {
 return (0);
 free(user->name);
-fre(user);
+free(user);
 }
 user->name = strcpy(user->name, name);
 user->age = age;
