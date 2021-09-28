@@ -24,19 +24,19 @@ user = malloc(sizeof(dog_t));
 if (user == 0)
 {
 return (0);
-free(user);
 }
 user->name = malloc(sizeof(char) * (strlen(name) + 1));
 if (user->name == 0)
 {
 return (0);
-free(user->name);
+free(user);
 }
-user->owner = malloc(sizeof(char) *(strlen(owner) + 1));
+user->owner = malloc(sizeof(char) * (strlen(owner) + 1));
 if (user->owner == 0)
 {
 return (0);
-free(user->owner);
+free(user->name);
+fre(user);
 }
 user->name = strcpy(user->name, name);
 user->age = age;
