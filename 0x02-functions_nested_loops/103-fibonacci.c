@@ -1,24 +1,26 @@
 #include <stdio.h>
 /**
+* main- function used
 *
-*
-*
+* Return: value 0
 */
 int main(void)
 {
-long int i = 1;
-long int j = 2;
-long int l = 3;
-long int m = 2;
-if (k < 4,000,000)
-long int k = i + j;
-i = j;
-j = k;
-if (k % 2 ==0)
+int i;
+long int j = 1;
+long int k = 2;
+long int l = j + k;
+long int sum = 0;
+for (i = 3; i < 32; i++)
 {
-m = m + k;
-printf("%ld",m);
+j = k;
+k = l;
+l = j + k;
+if (l % 2 == 0)
+{
+sum += l;
 }
 }
-printf("\n");
+printf("%ld\n", sum + 2);
+return (0);
 }
