@@ -1,34 +1,36 @@
-#include "calc.h"
+#include "3-calc.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
+* main- function used
 *
+* @argc: number of command lines paased
 *
+* @argv: content of command line
 *
-*
-*
-*
-*
-*
-*
+* Return: 0
 */
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
-int i;
 int j;
 int k;
-int res;
-if (argc < 3 && argc > 0)
+int (*res)(int, int);
+if (argc < 5)
 {
-for (i = 0; i < argc; i++)
-{
+res = get_op_func(argv[2]);
 j = atoi(argv[1]);
-k = atoi(argv[2]);
+k = atoi(argv[3]);
+if (!res)
+{
+printf("Error\n");
+exit(99);
 }
-printf ("%d\n", )
+printf("%d\n", res(j, k));
 }
-if 
 else
 {
 printf("Error\n");
-exit (98);
+exit(98);
+}
+return (0);
 }
