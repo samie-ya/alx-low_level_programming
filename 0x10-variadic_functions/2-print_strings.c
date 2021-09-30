@@ -13,7 +13,7 @@
 */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-if (separator != 0 && n != 0)
+if (n > 0)
 {
 va_list ap;
 unsigned int i;
@@ -30,7 +30,7 @@ else
 {
 printf("%s", c);
 }
-if (i < n - 1)
+if (i < n - 1 && separator != 0)
 {
 printf("%s", separator);
 }
