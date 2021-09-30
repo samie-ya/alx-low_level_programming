@@ -11,5 +11,8 @@
 */
 void print_all(const char * const format, ...)
 {
-
+struct const format
+{
+format[] = char
+};
 }

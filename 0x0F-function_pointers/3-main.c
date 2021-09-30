@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 int j;
 int k;
 int (*res)(int, int);
-if (argc < 5)
+if (argc == 4)
 {
 res = get_op_func(argv[2]);
 j = atoi(argv[1]);
