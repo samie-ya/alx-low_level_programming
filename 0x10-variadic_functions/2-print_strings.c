@@ -30,7 +30,7 @@ else
 {
 printf("%s", c);
 }
-if (i < n - 1 && separator != 0)
+if (i != n - 1 && separator != 0)
 {
 printf("%s", separator);
 }
