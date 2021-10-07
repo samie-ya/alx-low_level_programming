@@ -10,7 +10,7 @@
 *
 * Return: to the new address
 */
-list_t *add_node_end(list_t **head, const char *s)
+list_t *add_node_end(list_t **head, const char *str)
 {
 list_t *new;
 list_t *last;
@@ -20,8 +20,8 @@ if (new == NULL)
 {
 return (0);
 }
-new->str = strdup(s);
-new->len = _len(s);
+new->str = strdup(str);
+new->len = _len(str);
 new->next = NULL;
 if (*head == NULL)
 {

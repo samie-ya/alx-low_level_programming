@@ -10,7 +10,7 @@
 *
 * Return: to the address of the new element
 */
-list_t *add_node(list_t **head, const char *s)
+list_t *add_node(list_t **head, const char *str)
 {
 list_t *new;
 new = malloc(sizeof(list_t));
@@ -18,8 +18,8 @@ if (new == NULL)
 {
 return (0);
 }
-new->str = strdup(s);
-new->len = _len(s);
+new->str = strdup(str);
+new->len = _len(str);
 new->next = *head;
 *head = new;
 return (*head);
