@@ -11,12 +11,12 @@
 */
 size_t print_list(const list_t *h)
 {
-size_t n = 0;
-while (h)
+unsigned int n = 0;
+while (h != NULL)
 {
 if (h->str == NULL)
 {
-printf("%s\n", "[0] (nul)");
+printf("[0] (nul)\n");
 }
 else
 {
