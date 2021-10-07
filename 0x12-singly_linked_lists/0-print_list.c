@@ -12,7 +12,7 @@
 size_t print_list(const list_t *h)
 {
 unsigned int n = 0;
-while (h != NULL)
+while (h)
 {
 if (h->str == NULL)
 {
@@ -23,8 +23,8 @@ else
 printf("[%d] ", h->len);
 printf("%s\n", h->str);
 }
-n++;
 h = h->next;
+n++;
 }
 return (n);
 }
