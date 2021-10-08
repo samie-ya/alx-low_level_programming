@@ -6,7 +6,7 @@
 *
 * @head: pointer to the head pointer of the node
 *
-* @s: the strings to be added
+* @str: the strings to be added
 *
 * Return: to the address of the new element
 */
