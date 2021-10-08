@@ -6,7 +6,7 @@
 *
 * @head: pointer to the head pointer
 *
-* @s: string to be duplicated
+* @str: string to be duplicated
 *
 * Return: to the new address
 */
