@@ -1,27 +1,33 @@
 #include "main.h"
 /**
-* cap_string- capitalizes the first letter
+* cap_string- capitalizes a string
 *
-* @s: parameter used
+* @s: string used
 *
-* Return: value s
+* Return: the string
 */
 char *cap_string(char *s)
 {
-int i = 0;
+char str[] = {',', ';', '.', '?', '"', '(', ')', '{', '}', ' ', 10, 9};
+int i;
 int j;
-int n = 13;
-char a[] = {32, '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
-while (s[i])
+i = 0;
+while (s[i] != '\0')
 {
-j = 0;
-while (j < n)
+for (j = 0; j < 12; j++)
 {
-if ((i == 0 || s[i - 1] == a[j]) && (s[i] >= 97 && s[i] <= 122))
-s[i] = s[i] - 32;
-j++;
-if (s[i] == '\t')
+if (s[i] == str[j])
+{
+i++;
+if (s[i] >= 97 && s[i] <= 122)
+{
+s[i] -= 32;
+}
+}
+if (s[i] == 9)
+{
 s[i] = ' ';
+}
 }
 i++;
 }
