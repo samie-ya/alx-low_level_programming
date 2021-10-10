@@ -1,27 +1,22 @@
 #include "main.h"
 /**
-* reverse_array- For printing an integer array in reverse order
-*
-* @a: parameter used
-*
-* @n: parameter used
-*
-* Return: value nothing
-*/
+ * reverse_array - to reverse the integers in an array
+ *
+ * @a: an array to reverse
+ *
+ * @n: number of elements in an array
+ *
+ * Return: Nothing
+ */
 void reverse_array(int *a, int n)
 {
 int i;
 int temp;
-int j;
-for (i = 0; i < n; i++)
+for (i = 0; i < n - 1; i++)
 {
-a++;
-}
-for (i = 0; i < n / 2; i++)
-{
-temp = *(a + i);
-*(a + i) = *(a + n -1 - i);
-*(a + n - 1 - i) = temp;
-a++;
+temp = a[n - 1];
+a[n - 1] = a[i];
+a[i] = temp;
+n--;
 }
 }
