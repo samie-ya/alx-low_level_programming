@@ -17,18 +17,22 @@ char *cap_string(char *s)
 	i = 0;
 	while (s[i] != '\0')
 	{
+		if (i == 0)
+		{
+			if (s[i] >= 'a' && s[i] <= 122)
+			{
+				s[i] -= 32;
+				continue;
+			}
+		}
 		for (j = 0; j < 13; j++)
 		{
-			if (s[i] == str[j])
+			if (s[i - 1] == str[j])
 			{
-				i++;
-				if (s[0] >= 97 && s[0] <= 122)
-				{
-					s[0] -= 32;
-				}
-				if (s[i] >= 97 && s[i] <= 122)
+				if (s[i] >= 'a' && s[i] <= 'z')
 				{
 					s[i] -= 32;
+					continue;
 				}
 			}
 			if (s[i] == 9)
