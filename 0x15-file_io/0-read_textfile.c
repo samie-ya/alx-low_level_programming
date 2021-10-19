@@ -1,20 +1,21 @@
 #include "main.h"
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <fcntl.h>  
+#include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <stddef.h>
 
 /**
-*
-*
-*
-*
-*
-*
-*
-*/
+ * read_textfile- reads and prints textfile
+ *
+ * @filename: pointer to the file
+ *
+ * @letters: number of bytes to write or display
+ *
+ * Return: On success - Actual number of letters it could read
+ *        On failure - 1
+ */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -31,14 +32,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
-	fd = open(filename, O_RDONLY, 0600);
+	fd = open(filename, O_RDWR);
 
 	if (fd == -1)
 	{
 		return (0);
 	}
-	write(STDOUT_FILENO, s, letters);
 	rd = read(fd, s, letters);
+	write(STDOUT_FILENO, s, letters);
 	free(s);
 	close(fd);
 	return (rd);
