@@ -27,7 +27,7 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	fd = open(av[1], O_RDONLY);
-	rd = read(fd, s, m);
+	rd = read(fd, s, 1024);
 	if (fd == -1 || rd == -1)
 	{
 		dprintf(1, "Error: Can't read from file %s\n", av[1]);
