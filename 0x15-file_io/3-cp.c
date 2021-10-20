@@ -30,7 +30,7 @@ int main(int ac, char **av)
 	rd = read(fd, s, 1024);
 	if (fd == -1 || rd == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", av[1]);
+		dprintf(1, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 	fd1 = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
