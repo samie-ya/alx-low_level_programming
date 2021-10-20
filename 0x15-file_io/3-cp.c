@@ -5,7 +5,6 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
  * main- to create commandline arguments
  *
@@ -15,22 +14,21 @@
  *
  * Return: Always 0.
  */
-
 int main(int ac, char **av)
 {
 	int fd, rd, fd1, wr, i;
 	char *s;
 
 	if (ac != 3)
+	{
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
+	}
 	fd = open(av[1], O_RDONLY);
 	i = 0;
 	while (*av)
 		i++;
 	s = malloc(sizeof(char) * i);
-	if (s == NULL)
-		return (0);
 	rd = read(fd, s, i);
 	if (fd == -1 || rd == -1)
 	{
