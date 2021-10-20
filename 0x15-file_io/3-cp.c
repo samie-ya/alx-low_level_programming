@@ -26,7 +26,7 @@ int main(int ac, char **av)
 	}
 	fd = open(av[1], O_RDONLY);
 	i = 0;
-	while (av[1] != '\0')
+	while (*av[1] != '\0')
 		i++;
 	s = malloc(sizeof(char) * i);
 	rd = read(fd, s, i);
