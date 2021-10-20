@@ -25,10 +25,15 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	fd = open(av[1], O_RDONLY);
-	rd = read(fd, s, 3000);
-	if (fd == -1 && rd == -1)
+	if (fd == -1)
 	{
 		dprintf(1, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
+	rd = read(fd, s, 3000);
+	if (rd == -1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 	fd1 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
@@ -41,11 +46,6 @@ int main(int ac, char **av)
 	if (close(fd) == -1)
 	{
 		dprintf(2, "Error: Can't close fd %d\n", fd);
-		exit(100);
-	}
-	if (close(fd1) == -1)
-	{
-		dprintf(2, "Error: Can't close fd %d\n", fd1);
 		exit(100);
 	}
 	close(fd);
