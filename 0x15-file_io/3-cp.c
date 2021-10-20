@@ -16,8 +16,8 @@
  */
 int main(int ac, char **av)
 {
-	int fd, rd, fd1, wr, i;
-	char *s;
+	int fd, rd, fd1, wr;
+	char s[3000];
 
 	if (ac != 3)
 	{
@@ -25,11 +25,7 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	fd = open(av[1], O_RDONLY);
-	i = 0;
-	while (*av[1])
-		i++;
-	s = malloc(sizeof(char) * i);
-	rd = read(fd, s, i);
+	rd = read(fd, s, 3000);
 	if (fd == -1 || rd == -1)
 	{
 		dprintf(1, "Error: Can't read from file %s\n", av[1]);
@@ -52,7 +48,6 @@ int main(int ac, char **av)
 		dprintf(2, "Error: Can't close fd %d\n", fd1);
 		exit(100);
 	}
-	free(s);
 	close(fd);
 	close(fd1);
 	return (0);
