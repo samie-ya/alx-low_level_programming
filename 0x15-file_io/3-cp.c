@@ -18,8 +18,8 @@
 
 int main(int ac, char **av)
 {
-	int fd, rd, fd1, wr;
-	char s[1024];
+	int fd, rd, fd1, wr, m;
+	char s[];
 
 	if (ac != 3)
 	{
@@ -27,7 +27,9 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	fd = open(av[1], O_RDONLY);
-	rd = read(fd, s, 1024);
+	if (m == 1024)
+	{
+	rd = read(fd, s, m);
 	if (fd == -1 || rd == -1)
 	{
 		dprintf(1, "Error: Can't read from file %s\n", av[1]);
@@ -39,6 +41,7 @@ int main(int ac, char **av)
 	{
 		dprintf(2, "Error: Can't write to %s\n", av[2]);
 		exit(99);
+	}
 	}
 	if (close(fd) < 0)
 	{
