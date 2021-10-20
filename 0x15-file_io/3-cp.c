@@ -18,22 +18,26 @@
 
 int main(int ac, char **av)
 {
-	int fd, rd, fd1, wr;
-	char s[1024];
+	int fd, rd, fd1, wr, i;
+	char *s;
 
 	if (ac != 3)
-	{
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
-	}
 	fd = open(av[1], O_RDONLY);
-	rd = read(fd, s, 1024);
+	i = 0;
+	while (*av)
+		i++;
+	s = malloc(sizeof(char) * i);
+	if (s == NULL)
+		return (0);
+	rd = read(fd, s, i);
 	if (fd == -1 || rd == -1)
 	{
 		dprintf(1, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	fd1 = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	fd1 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	wr = write(fd1, s, rd);
 	if (fd1 == -1 || wr == -1)
 	{
@@ -50,6 +54,7 @@ int main(int ac, char **av)
 		dprintf(2, "Error: Can't close fd %d\n", fd1);
 		exit(100);
 	}
+	free(s);
 	close(fd);
 	close(fd1);
 	return (0);
