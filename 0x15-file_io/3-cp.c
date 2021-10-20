@@ -18,7 +18,7 @@
 
 int main(int ac, char **av)
 {
-	int fd, rd, fd1, wr, i;
+	int fd, rd, fd1, wr;
 	char s[1024];
 
 	if (ac != 3)
