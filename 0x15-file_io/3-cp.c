@@ -34,7 +34,7 @@ int main(int ac, char **av)
 		exit(98);
 	}
 	fd1 = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
-	wr = write(fd1, s, 1024);
+	wr = write(fd1, s, rd);
 	if (fd1 == -1 || wr == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", av[2]);
