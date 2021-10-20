@@ -26,7 +26,7 @@ int main(int ac, char **av)
 		dprintf(2, "Usage: cp file_from file_to");
 		exit(97);
 	}
-	fd = open(av[1], O_RDWR);
+	fd = open(av[1], O_RDONLY);
 	rd = read(fd, s, 1024);
 	if (fd == -1 || rd == -1)
 	{
