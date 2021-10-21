@@ -19,10 +19,6 @@ int main(int ac, char *av[])
 	int sum = 0;
 	char *s;
 
-	if (ac == 1)
-	{
-		printf("0");
-	}
 	for (i = 1; i < ac; i++)
 	{
 		s = av[i];
