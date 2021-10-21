@@ -1,35 +1,44 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
+
 /**
-* main- function used
-*
-* @argc: commandline to check the number of arguments used
-*
-* @argv: commandline points to char
-*
-* Return: value 0 - if there are numbers
-*       : value 1 - if there are no number
-*/
-int main(int argc, char *argv[])
+ * main - to add command line arguments
+ *
+ * @ac: number of arguments
+ *
+ * @av: array of pointers to a string
+ *
+ * Return: 0 if success
+ *         1 if argument is not integer
+ */
+
+int main(int ac, char *av[])
 {
-int i = 1;
-int sum = 0;
-if (argc > 1)
-{
-for (i = 1; i < argc; i++)
-{
-if (*argv[i] < 48 || *argv[i] > 57)
-{
-printf("Error\n");
-return (1);
-}
-sum += atoi(argv[i]);
-}
-printf("%d\n", sum);
-}
-else
-{
-printf("0\n");
-}
-return (0);
+	int i, j, k;
+	int sum = 0;
+	char *s;
+
+	if (ac == 1)
+	{
+		printf("0");
+	}
+	for (i = 1; i < ac; i++)
+	{
+		s = av[i];
+		j = 0;
+		while (s[j] != '\0')
+		{
+			if (s[j] < 48 || s[j] > 57)
+			{
+				printf("Error\n");
+				return (1);
+			}
+		j++;
+		}
+	k = atoi(av[i]);
+	sum += k;
+	}
+	printf("%d\n", sum);
+	return (0);
 }
