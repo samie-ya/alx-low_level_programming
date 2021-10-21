@@ -12,14 +12,13 @@
  */
 int main(int ac, char *av[])
 {
-int coin, i = atoi(av[1]);
+int coin, i;
 if (ac == 1)
 {
 printf("Error\n");
 return (1);
 }
-if (i < 0)
-printf("0\n");
+i = atoi(av[1]);
 coin = 0;
 while (i != 0)
 {
