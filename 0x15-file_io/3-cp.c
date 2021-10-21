@@ -41,7 +41,7 @@ int main(int ac, char **av)
 	if (rd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		return (98);
+		exit(98);
 	}
 	if (close(fd) == -1)
 	{
