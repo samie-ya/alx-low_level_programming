@@ -48,6 +48,11 @@ int main(int ac, char **av)
 		dprintf(2, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
+	if (close(fd) == -1)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
 	close(fd);
 	close(fd1);
 	return (0);
