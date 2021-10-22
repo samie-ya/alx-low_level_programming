@@ -17,7 +17,7 @@
 int main(int ac, char **av)
 {
 	int fd, rd, fd1, wr;
-	char s[1024];
+	char s[3000];
 	if (ac != 3)
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
@@ -29,8 +29,8 @@ int main(int ac, char **av)
 		dprintf(1, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	rd = read(fd, s, 1024);
-	if (rd >= 0)
+	rd = read(fd, s, 3000);
+	if (rd > 0)
 	{
 		fd1 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 		wr = write(fd1, s, rd);
@@ -55,7 +55,5 @@ int main(int ac, char **av)
 		dprintf(2, "Error: Can't close fd %d\n", fd1);
 		exit(100);
 	}
-	close(fd);
-	close(fd1);
 	return (0);
 }
