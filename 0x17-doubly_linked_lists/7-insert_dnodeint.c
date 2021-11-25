@@ -29,47 +29,20 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		add_dnodeint(h, n);
 	}
-	if (*h == NULL)
+	while (head != NULL)
 	{
-		add_dnodeint(h, n);
-	}
-	else
-	{
-		while (head != NULL)
+		if (idx == i)
 		{
-			if (idx == i)
-			{
-				current = head;
-				new->next = current;
-				previous = current->prev;
-				new->prev = previous;
-				previous->next = new;
-				current->prev = new;
-				return (new);
-			}
-			i++;
-			head = head->next;
+			current = head;
+			new->next = current;
+			previous = current->prev;
+			new->prev = previous;
+			previous->next = new;
+			current->prev = new;
+			return (new);
 		}
+		i++;
+		head = head->next;
 	}
 	return (NULL);
-}
-
-/**
-* listint_len - prints the number of nodes of the list
-*
-* @h: pointer to the head of the list
-*
-* Return: the number of nodes
-*/
-
-unsigned int listint_len(dlistint_t **h)
-{
-	unsigned int n = 0;
-
-	while (*h != NULL)
-	{
-		n++;
-		*h = (*h)->next;
-	}
-	return (n);
 }
