@@ -2,13 +2,13 @@
 #include <stdlib.h>
 
 /**
+* delete_dnodeint_at_index - deletes nodes at an index
 *
+* @head: pointer to pointer to beginning
 *
+* @index: the index to remove
 *
-*
-*
-*
-*
+* Return: 1 if successful else -1
 */
 
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
