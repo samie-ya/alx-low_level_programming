@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
-* delete_dnodeint_at_index - deletes nodes at an index
+* delete_dnodeint_at_index - deletes nodes at specified index
 *
-* @head: pointer to pointer to beginning
+* @head: pointer to pointer to the beginning
 *
-* @index: the index to remove
+* @index: the position to be deleted
 *
 * Return: 1 if successful else -1
 */
@@ -14,51 +14,53 @@
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	unsigned int n = 0, len;
-	dlistint_t *h = *head;
+	dlistint_t *h;
+	dlistint_t *previous;
 	dlistint_t *del;
 	dlistint_t *next;
-	dlistint_t *previous;
 
 	len = listint_len(*head);
-	if (*head != NULL && index == 0)
+	h = *head;
+	if (index == 0)
 	{
-		next = (*head)->next;
-		next->prev = NULL;
-		free(*head);
-		*head = next;
-		return (1);
+		if (h != NULL && h->next != NULL)
+		{
+			next = h->next;
+			next->prev = NULL;
+			*head = next;
+			return (1);
+		}
 	}
 	else if (index >= len)
+	{
 		return (-1);
-	else if (index > 0 && index < len)
+	}
+	else
 	{
 		while (h != NULL)
 		{
+			del = h;
 			if (index == n)
 			{
-				del = h;
-				previous = del->prev;
 				next = del->next;
-				previous->next = next;
+				previous = del->prev;
 				next->prev = previous;
-				free(del);
+				previous->next = next;
 				return (1);
 			}
 			h = h->next;
 			n++;
 		}
 	}
-	else
-		return (-1);
 	return (-1);
 }
 
 /**
-* listint_len - prints the number of nodes of the list
+* listint_len - to find the number of nodes
 *
-* @h: pointer to the head of the list
+* @h: pointer to the beginning
 *
-* Return: the number of nodes
+* Return: number of nodes
 */
 
 unsigned int listint_len(dlistint_t *h)
