@@ -13,14 +13,13 @@
 
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	unsigned int n = 0;
+	unsigned int n = 0, len;
 	dlistint_t *h = *head;
 	dlistint_t *del;
 	dlistint_t *next;
 	dlistint_t *previous;
 
-	if (*head == NULL)
-		return (-1);
+	len = listint_len(*head);
 	if (*head != NULL && index == 0)
 	{
 		next = (*head)->next;
@@ -29,20 +28,47 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		*head = next;
 		return (1);
 	}
+	else if (index >= len)
+		return (-1);
+	else if (index > 0 && index < len)
+	{
+		while (h != NULL)
+		{
+			if (index == n)
+			{
+				del = h;
+				previous = del->prev;
+				next = del->next;
+				previous->next = next;
+				next->prev = previous;
+				free(del);
+				return (1);
+			}
+			h = h->next;
+			n++;
+		}
+	}
+	else
+		return (-1);
+	return (-1);
+}
+
+/**
+* listint_len - prints the number of nodes of the list
+*
+* @h: pointer to the head of the list
+*
+* Return: the number of nodes
+*/
+
+unsigned int listint_len(dlistint_t *h)
+{
+	unsigned int n = 0;
+
 	while (h != NULL)
 	{
-		if (index == n)
-		{
-			del = h;
-			previous = del->prev;
-			next = del->next;
-			previous->next = next;
-			next->prev = previous;
-			free(del);
-			return (1);
-		}
-		h = h->next;
 		n++;
+		h = h->next;
 	}
-	return (1);
+	return (n);
 }
