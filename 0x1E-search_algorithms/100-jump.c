@@ -1,4 +1,5 @@
 #include "search_algos.h"
+#include <math.h>
 
 /**
 * jump_search- This is a jump search algorithim
@@ -36,7 +37,7 @@ int jump_search(int *array, size_t size, int value)
 		low = high;
 		high += sqrt(size);
 	}
-	/*printf("Value checked array[%ld] = [%d]\n", low, array[low]);*/
+	printf("Value checked array[%ld] = [%d]\n", low, array[low]);
 	printf("Value found between indexes [%ld] and [%ld]\n", low, high);
 	printf("Value checked array[%ld] = [%d]\n", low, array[low]);
 	return (-1);
