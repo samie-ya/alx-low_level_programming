@@ -1,5 +1,4 @@
 #include "search_algos.h"
-#include <math.h>
 
 /**
 * jump_search- This is a jump search algorithim
@@ -15,7 +14,7 @@
 
 int jump_search(int *array, size_t size, int value)
 {
-	size_t high, i, low;
+	size_t high, i, low, new_low;
 
 	if (array == NULL)
 		return (-1);
@@ -37,8 +36,9 @@ int jump_search(int *array, size_t size, int value)
 		low = high;
 		high += sqrt(size);
 	}
-	printf("Value checked array[%ld] = [%d]\n", low, array[low]);
-	printf("Value found between indexes [%ld] and [%ld]\n", low, high);
-	printf("Value checked array[%ld] = [%d]\n", low, array[low]);
+	new_low = (low - sqrt(size)) + 1;
+	printf("Value found between indexes [%ld] and [%ld]\n", new_low, low);
+	for (i = new_low; i < size; i++)
+		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 	return (-1);
 }
